@@ -39,7 +39,7 @@ const friends = [
   {
     name: "Harshad Sawant",
     nickname: "The Comedian",
-    image: "/harshad.jpeg",
+    image: "/Harshad.jpeg",
     role: "Professional mood changer",
     message: "You somehow make even the worst days funny. Thank you for every ridiculous laugh."
   },
