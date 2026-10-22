@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3e7d4">
+  <title>Aamhi Satpute | Our Forever Story</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="grain"></div>
+  <div id="confetti" class="confetti-layer"></div>
+
+  <header class="navbar">
+    <a href="#home" class="logo">Aamhi <span>Satpute.</span></a>
+    <nav id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#gang">The Gang</a>
+      <a href="#memories">Memories</a>
+      <a href="#games">Fun Zone</a>
+      <a href="#secret">Secret</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="musicBtn" class="music-btn" aria-label="Toggle music">♫</button>
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- WELCOME -->
+    <section class="hero" id="home">
+      <div class="hero-sticker sticker-one">✿</div>
+      <div class="hero-sticker sticker-two">☆</div>
+      
+      <div class="hero-copy">
+        <span class="eyebrow">A LITTLE CORNER OF OUR UNIVERSE</span>
+        <h1>Some people<br>become <em>home.</em></h1>
+        <p>
+          Through every stupid joke, every unexpected adventure
+          and every unforgettable moment — this is our story.
+        </p>
+        <h2 class="hero-handwriting">Aamhi Satpute ♡</h2>
+        <a class="primary-btn" href="#gang">Open Our Scrapbook ↗</a>
+      </div>
+
+      <div class="hero-art" aria-label="Friendship scrapbook">
+        <div class="paper-note">The best kind of chaos<br>is us! ♡</div>
+        <div class="hero-polaroid hero-photo-one tilt-card">
+          <img src="group01.jpeg" alt="Our friendship group"
+               onerror="this.src='https://placehold.co/500x600/e9cbb9/65483b?text=Our+Gang'">
+          <span>our favourite people</span>
+        </div>
+        <div class="hero-polaroid hero-photo-two tilt-card">
+          <img src="/WhatsApp Image 2026-10-21 at 11.05.53 AM (1).jpeg" alt="Our best memories"
+               onerror="this.src='https://placehold.co/500x600/d9c7a2/65483b?text=Forever+Us'">
+          <span>forever & always ♡</span>
+        </div>
+        <div class="tape hero-tape"></div>
+        <span class="hero-scribble">good times ↗</span>
+      </div>
+    </section>
+
+    <!-- FRIENDS -->
+    <section class="section gang-section" id="gang">
+      <div class="section-heading reveal">
+        <span class="eyebrow">CHAPTER 01 / OUR PEOPLE</span>
+        <h2>Meet the <em>chaos makers.</em></h2>
+        <p>Not just friends. A collection of beautiful disasters.</p>
+        <span class="handwritten">Hover, tilt & click a photo! ↘</span>
+      </div>
+      <div class="friends-gallery" id="friendsGallery"></div>
+    </section>
+
+    <!-- MEMORIES -->
+    <section class="section memories-section" id="memories">
+      <div class="section-heading reveal">
+        <span class="eyebrow">CHAPTER 02 / THE GOOD OLD DAYS</span>
+        <h2>Pages from <em>our story.</em></h2>
+        <p>Some moments deserve their own little place in history.</p>
+      </div>
+      <div class="memory-timeline" id="memoryTimeline"></div>
+    </section>
+
+    <!-- GAME -->
+    <section class="section games-section" id="games">
+      <div class="section-heading reveal">
+        <span class="eyebrow">CHAPTER 03 / NO SERIOUS PEOPLE ALLOWED</span>
+        <h2>The <em>fun zone.</em></h2>
+        <p>Let's see how well you know this crazy gang.</p>
+      </div>
+
+      <div class="game-layout">
+        <div class="game-paper reveal">
+          <div class="paper-pin">✿</div>
+          <span class="eyebrow">GAME ONE</span>
+          <h3>Who's most likely to...</h3>
+          <div id="questionDisplay" class="game-question">
+            Who's most likely to be late to every plan?
+          </div>
+          <button id="nextQuestion" class="primary-btn">Next Question →</button>
+          <p class="handwritten">Point at the guilty one!</p>
+        </div>
+
+        <div class="game-paper yellow-paper reveal">
+          <span class="eyebrow">GAME TWO</span>
+          <h3>Memory Roulette</h3>
+          <p>Spin for a random memory or challenge.</p>
+          <div class="roulette-wheel" id="rouletteWheel">
+            <span>✦</span>
+          </div>
+          <div id="rouletteResult" class="roulette-result">
+            Ready for a little nostalgia?
+          </div>
+          <button id="spinBtn" class="dark-btn">Spin the Memories ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECRET -->
+    <section class="section secret-section" id="secret">
+      <div class="section-heading reveal">
+        <span class="eyebrow">CHAPTER 04 / FROM MY HEART</span>
+        <h2>One last <em>little secret.</em></h2>
+        <p>There are things I don't say often enough.</p>
+      </div>
+
+      <div class="secret-content reveal">
+        <div class="envelope" id="envelope" role="button"
+             tabindex="0" aria-label="Open secret letter">
+          <div class="envelope-back"></div>
+          <div class="letter-peek">For my favourite humans ♡</div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">♡</div>
+        </div>
+        <p class="handwritten">Psst... click the envelope!</p>
+      </div>
+    </section>
+
+    <!-- END -->
+    <section class="ending">
+      <span class="eyebrow">AND THE STORY CONTINUES...</span>
+      <h2>Different paths.<br><em>Same crazy family.</em></h2>
+      <p>No matter where life takes us, we'll always have us.</p>
+      <div class="ending-signature">With love, always ♡</div>
+      <button id="surpriseBtn" class="primary-btn">One More Surprise ✨</button>
+    </section>
+  </main>
+
+  <footer>
+    <span>AAMHI SATPUTE ♡</span>
+    <span>Made with love, laughter & a little madness.</span>
+  </footer>
+
+  <!-- FRIEND DETAIL POPUP -->
+  <div id="friendModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box friend-modal-box">
+      <button class="close-modal" data-close aria-label="Close">×</button>
+      <img id="modalFriendImage" src="" alt="">
+      <div class="modal-text">
+        <span class="eyebrow">THE GANG FILES</span>
+        <h2 id="modalFriendName"></h2>
+        <p id="modalFriendRole" class="handwritten"></p>
+        <p id="modalFriendMessage"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECRET LETTER POPUP -->
+  <div id="letterModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box letter-modal-box">
+      <button class="close-modal" data-close aria-label="Close">×</button>
+      <span class="eyebrow">A LETTER TO MY PEOPLE</span>
+      <h2>Dear Satpute Gang, ♡</h2>
+      <p>
+        Life gave me many memories, but some of the best ones
+        have all of you in them.
+      </p>
+      <p>
+        From the most random conversations to the moments
+        when we stood by each other, you made ordinary days
+        unforgettable.
+      </p>
+      <p>
+        Years will pass. Places will change. We might get busy.
+        But I hope we never lose the madness that brought us together.
+      </p>
+      <p>
+        Thank you for being my people, my safe place and
+        my favourite kind of chaos.
+      </p>
+      <div class="letter-sign">Forever your friend, ♡</div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="music/friendship.mp3" loop preload="none"></audio>
+</body>
+</html>
