@@ -32,7 +32,7 @@ const friends = [
   {
     name: "Jyoti Pandiya",
     nickname: "Silent Killer",
-    image: "/jyoti.jpeg",
+    image: "/Jyoti.jpeg",
     role: "Quiet but dangerous",
     message: "You don't always talk the most, but when you do, everyone remembers it."
   },
