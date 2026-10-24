@@ -117,6 +117,71 @@ const rouletteMemories = [
   "Everyone must take a new group selfie!"
 ];
 
+// SHARE YOUR THOUGHTS - LOCAL DEMO
+
+const thoughtName = document.getElementById("thoughtName");
+const thoughtMessage = document.getElementById("thoughtMessage");
+const submitThought = document.getElementById("submitThought");
+const thoughtStatus = document.getElementById("thoughtStatus");
+const thoughtsList = document.getElementById("thoughtsList");
+
+const storageKey = "aamhi-sathpute-thoughts";
+
+function loadThoughts() {
+  try {
+    return JSON.parse(localStorage.getItem(storageKey) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+let thoughts = loadThoughts();
+
+function renderThoughts() {
+  thoughtsList.replaceChildren();
+
+  thoughts.forEach(thought => {
+    const entry = document.createElement("article");
+    entry.className = "thought-entry";
+
+    const name = document.createElement("strong");
+    name.textContent = thought.name;
+
+    const message = document.createElement("p");
+    message.textContent = thought.message;
+
+    entry.append(name, message);
+    thoughtsList.appendChild(entry);
+  });
+}
+
+submitThought.addEventListener("click", () => {
+  const name = thoughtName.value.trim() || "Anonymous";
+  const message = thoughtMessage.value.trim();
+
+  if (!message) {
+    thoughtStatus.textContent = "Please write your thoughts first.";
+    return;
+  }
+
+  thoughts.unshift({ name, message });
+  thoughts = thoughts.slice(0, 50);
+
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(thoughts));
+    thoughtStatus.textContent = "Your thought has been saved on this device!";
+  } catch {
+    thoughtStatus.textContent = "Your thought is shown here but couldn't be saved.";
+  }
+
+  thoughtName.value = "";
+  thoughtMessage.value = "";
+  renderThoughts();
+});
+
+renderThoughts();
+
+
 /* =====================================
    HELPERS
 ===================================== */
