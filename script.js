@@ -685,3 +685,31 @@ if (submitThoughtBtn && thoughtMessageInput) {
 }
 
 renderSavedThoughts();
+
+/* ======================================
+   GAME 2 → THOUGHTS CORNER
+====================================== */
+
+const giveRouletteThoughtBtn =
+  document.getElementById("giveRouletteThoughtBtn");
+
+if (giveRouletteThoughtBtn) {
+  giveRouletteThoughtBtn.addEventListener("click", () => {
+    const rouletteResult =
+      document.getElementById("rouletteResult");
+
+    if (!rouletteResult) return;
+
+    const selectedQuestion = rouletteResult.textContent.trim();
+
+    if (
+      selectedQuestion === "Ready for a little nostalgia?" ||
+      selectedQuestion === "The universe is choosing..."
+    ) {
+      alert("Please spin the wheel first!");
+      return;
+    }
+
+    selectThoughtQuestion(selectedQuestion);
+  });
+}
