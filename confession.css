@@ -484,3 +484,35 @@
 .thought-answer-btn:hover {
   background: #a65e73;
 }
+
+/* QUESTION LABEL ON SAVED ANSWERS */
+
+#confessionCorner .saved-thought-question {
+  display: block;
+  margin-bottom: 10px;
+  color: #a96c7b;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+#confessionCorner .thought-entry {
+  background: #fffdf9;
+  border: 1px solid #ead9d0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+#confessionCorner .thought-entry strong {
+  display: block;
+  color: #a66a7a;
+  margin-bottom: 6px;
+}
+
+#confessionCorner .thought-entry p {
+  color: #57444c;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
