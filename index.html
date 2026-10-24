@@ -11,7 +11,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./style.css">
-  <script src="script.js" defer></script>
+  <script src="script.js" defer>
+    
+// Connect a Fun Section question to the Thoughts Corner
+let currentThoughtQuestion = "";
+
+function selectThoughtQuestion(questionText) {
+  currentThoughtQuestion = questionText;
+
+  const questionHeading =
+    document.getElementById("activeThoughtQuestion");
+
+  const thoughtsBox =
+    document.getElementById("confessionCorner");
+
+  if (questionHeading) {
+    questionHeading.textContent = questionText;
+  }
+
+  if (thoughtsBox) {
+    thoughtsBox.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+
+  </script>
   <style>
 /* CONFESSION CORNER STYLING */
 
