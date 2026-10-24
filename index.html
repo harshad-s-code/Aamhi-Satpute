@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./style.css">
-  <script src="script.js" defer>
+ <script src="./script.js" defer></script>
     
 // Connect a Fun Section question to the Thoughts Corner
 let currentThoughtQuestion = "";
@@ -303,6 +303,13 @@ function selectThoughtQuestion(questionText) {
             Who's most likely to be late to every plan?
           </div>
           <button id="nextQuestion" class="primary-btn">Next Question →</button>
+          <button
+  type="button"
+  id="giveThoughtBtn"
+  class="thought-answer-btn"
+>
+  💭 Give Your Thoughts
+</button>
           <p class="handwritten">Point at the guilty one!</p>
         </div>
 
@@ -319,8 +326,6 @@ function selectThoughtQuestion(questionText) {
           <button id="spinBtn" class="dark-btn">Spin the Memories ↗</button>
         </div>
       </div>
-      
-<div class="thoughts-box">
   
 <!-- PREMIUM CONFESSION CORNER -->
 <div class="confession-v2" id="confessionCorner">
@@ -386,7 +391,6 @@ function selectThoughtQuestion(questionText) {
     </div>
 
   </div>
-</div>
 
     </section>
 
