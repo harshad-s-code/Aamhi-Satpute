@@ -569,7 +569,14 @@ function selectThoughtQuestion(questionText) {
     });
   }
 }
+const initialQuestion = document.getElementById("questionDisplay");
+const activeThoughtQuestion =
+  document.getElementById("activeThoughtQuestion");
 
+if (initialQuestion && activeThoughtQuestion) {
+  activeThoughtQuestion.textContent =
+    initialQuestion.textContent.trim();
+}
 const giveThoughtBtn =
   document.getElementById("giveThoughtBtn");
 
@@ -585,3 +592,96 @@ if (giveThoughtBtn) {
     }
   });
 }
+
+/* ==========================================
+   THOUGHTS CORNER - SAVE AND DISPLAY ANSWERS
+========================================== */
+
+const thoughtNameInput = document.getElementById("thoughtName");
+const thoughtMessageInput = document.getElementById("thoughtMessage");
+const submitThoughtBtn = document.getElementById("submitThought");
+const thoughtStatus = document.getElementById("thoughtStatus");
+const thoughtsList = document.getElementById("thoughtsList");
+
+const thoughtsStorageKey = "aamhi-satpute-thoughts";
+
+function getSavedThoughts() {
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(thoughtsStorageKey) || "[]"
+    );
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+let savedThoughts = getSavedThoughts();
+
+function renderSavedThoughts() {
+  if (!thoughtsList) return;
+
+  thoughtsList.replaceChildren();
+
+  savedThoughts.forEach(thought => {
+    const entry = document.createElement("article");
+    entry.className = "thought-entry";
+
+    const question = document.createElement("small");
+    question.className = "saved-thought-question";
+    question.textContent = thought.question || "General thoughts";
+
+    const name = document.createElement("strong");
+    name.textContent = thought.name || "Anonymous";
+
+    const message = document.createElement("p");
+    message.textContent = thought.message || "";
+
+    entry.append(question, name, message);
+    thoughtsList.appendChild(entry);
+  });
+}
+
+if (submitThoughtBtn && thoughtMessageInput) {
+  submitThoughtBtn.addEventListener("click", () => {
+    const name = thoughtNameInput?.value.trim() || "Anonymous";
+    const message = thoughtMessageInput.value.trim();
+
+    if (!message) {
+      thoughtStatus.textContent =
+        "Please write your answer before submitting.";
+      return;
+    }
+
+    const question =
+      currentThoughtQuestion ||
+      document.getElementById("questionDisplay")?.textContent.trim() ||
+      "General thoughts";
+
+    savedThoughts.unshift({
+      name,
+      message,
+      question
+    });
+
+    savedThoughts = savedThoughts.slice(0, 50);
+
+    try {
+      localStorage.setItem(
+        thoughtsStorageKey,
+        JSON.stringify(savedThoughts)
+      );
+
+      thoughtStatus.textContent =
+        "Your answer has been saved on this device! ♡";
+    } catch {
+      thoughtStatus.textContent =
+        "Your answer is visible here, but couldn't be saved.";
+    }
+
+    thoughtMessageInput.value = "";
+    renderSavedThoughts();
+  });
+}
+
+renderSavedThoughts();
