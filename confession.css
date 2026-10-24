@@ -222,3 +222,186 @@
     width: 100%;
   }
 }
+
+/* ==========================================
+   COMPACT THOUGHTS CORNER - CREAM THEME
+========================================== */
+
+#confessionCorner {
+  width: min(680px, calc(100% - 28px));
+  max-width: 680px;
+  margin: 35px auto 55px;
+  padding: 26px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fffaf2, #fcefe8);
+  border: 1px solid #e8d8cc;
+  box-shadow: 0 12px 35px rgba(90, 60, 50, .08);
+  color: #352b30;
+}
+
+#confessionCorner .confession-v2-orb {
+  display: none;
+}
+
+#confessionCorner .confession-v2-content {
+  max-width: 100%;
+}
+
+#confessionCorner .confession-v2-heading {
+  margin-bottom: 18px;
+}
+
+#confessionCorner .confession-v2-tag {
+  color: #b26c7c;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+#confessionCorner .confession-v2-heading h2 {
+  font-family: "Syne", "DM Sans", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 6px 0 10px;
+  color: #372b35;
+}
+
+#confessionCorner .confession-v2-heading h2 span {
+  display: inline;
+  background: none;
+  color: #bc7183;
+}
+
+#confessionCorner .confession-v2-heading p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #806e72;
+}
+
+#confessionCorner .thought-question-box {
+  margin: 18px auto 0;
+  padding: 15px 18px;
+  background: #fffdf9;
+  border: 1px solid #ead9d0;
+  border-left: 3px solid #c58391;
+  border-radius: 12px;
+  text-align: left;
+}
+
+#confessionCorner .thought-question-box > span {
+  display: block;
+  color: #ae7180;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+#confessionCorner #activeThoughtQuestion {
+  margin-top: 6px;
+  color: #382c35;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+#confessionCorner .confession-v2-panel {
+  padding: 20px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid #ecdcd4;
+  border-radius: 15px;
+  backdrop-filter: none;
+}
+
+#confessionCorner .confession-v2-top {
+  margin-bottom: 12px;
+  color: #b16e7e;
+  font-size: 10px;
+}
+
+#confessionCorner .confession-v2-fields label {
+  margin: 12px 0 6px;
+  color: #78636b;
+  font-size: 10px;
+}
+
+#confessionCorner #thoughtName,
+#confessionCorner #thoughtMessage {
+  background: #fffdfb;
+  border: 1px solid #e5d6d0;
+  border-radius: 9px;
+  padding: 12px 14px;
+  color: #382d34;
+  font-size: 13px;
+}
+
+#confessionCorner #thoughtName::placeholder,
+#confessionCorner #thoughtMessage::placeholder {
+  color: #a49499;
+}
+
+#confessionCorner #thoughtMessage {
+  min-height: 95px;
+}
+
+#confessionCorner #thoughtName:focus,
+#confessionCorner #thoughtMessage:focus {
+  border-color: #bd7a8b;
+  box-shadow: 0 0 0 3px rgba(189,122,139,.12);
+}
+
+#confessionCorner .confession-v2-bottom {
+  margin-top: 14px;
+}
+
+#confessionCorner .confession-v2-bottom > span {
+  color: #9b8389;
+  font-size: 9px;
+}
+
+#confessionCorner #submitThought {
+  padding: 12px 18px;
+  border-radius: 9px;
+  background: linear-gradient(110deg, #c17c8d, #dfad9a);
+  color: #fff;
+  font-size: 11px;
+}
+
+#confessionCorner #thoughtStatus {
+  color: #9e566b;
+}
+
+#confessionCorner .confession-v2-messages {
+  margin-top: 22px;
+}
+
+#confessionCorner .confession-v2-messages-title {
+  color: #a96c7b;
+  font-size: 10px;
+}
+
+#confessionCorner .thought-entry {
+  background: #fffdf9;
+  border-color: #ead9d0;
+  padding: 14px;
+}
+
+#confessionCorner .thought-entry strong {
+  color: #a66a7a;
+}
+
+#confessionCorner .thought-entry p {
+  color: #57444c;
+}
+
+@media (max-width: 600px) {
+  #confessionCorner {
+    padding: 18px;
+    margin: 25px auto 40px;
+  }
+
+  #confessionCorner .confession-v2-panel {
+    padding: 15px;
+  }
+}
