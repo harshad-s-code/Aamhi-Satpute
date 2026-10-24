@@ -405,3 +405,24 @@
     padding: 15px;
   }
 }
+
+.thought-answer-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 1px solid #d7a2ad;
+  border-radius: 30px;
+  background: #fff4f2;
+  color: #a85e73;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.thought-answer-btn:hover {
+  background: #bd7a8b;
+  color: white;
+  transform: translateY(-2px);
+}
