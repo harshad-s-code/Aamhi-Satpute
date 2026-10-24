@@ -690,26 +690,48 @@ renderSavedThoughts();
    GAME 2 → THOUGHTS CORNER
 ====================================== */
 
-const giveRouletteThoughtBtn =
+
+/* GAME 2 - GIVE YOUR THOUGHTS */
+
+const rouletteThoughtButton =
   document.getElementById("giveRouletteThoughtBtn");
 
-if (giveRouletteThoughtBtn) {
-  giveRouletteThoughtBtn.addEventListener("click", () => {
-    const rouletteResult =
-      document.getElementById("rouletteResult");
+if (rouletteThoughtButton) {
+  rouletteThoughtButton.addEventListener("click", function () {
 
-    if (!rouletteResult) return;
+    const resultBox = document.getElementById("rouletteResult");
+    const spinButton = document.getElementById("spinBtn");
 
-    const selectedQuestion = rouletteResult.textContent.trim();
+    if (!resultBox) return;
+
+    const selectedQuestion = resultBox.textContent.trim();
 
     if (
       selectedQuestion === "Ready for a little nostalgia?" ||
-      selectedQuestion === "The universe is choosing..."
+      selectedQuestion === "The universe is choosing..." ||
+      spinButton?.disabled
     ) {
-      alert("Please spin the wheel first!");
+      alert("Please complete the spin first!");
       return;
     }
 
-    selectThoughtQuestion(selectedQuestion);
+    const questionHeading =
+      document.getElementById("activeThoughtQuestion");
+
+    const thoughtsCorner =
+      document.getElementById("confessionCorner");
+
+    if (questionHeading) {
+      questionHeading.textContent = selectedQuestion;
+    }
+
+    currentThoughtQuestion = selectedQuestion;
+
+    if (thoughtsCorner) {
+      thoughtsCorner.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
   });
 }
