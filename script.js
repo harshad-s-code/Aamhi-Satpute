@@ -542,3 +542,46 @@ if ("IntersectionObserver" in window) {
 }
 
 console.log("Aamhi Satpute ❤️ Website loaded successfully!");
+
+/* ======================================
+   FUN ZONE → THOUGHTS CORNER
+====================================== */
+
+let currentThoughtQuestion = "";
+
+function selectThoughtQuestion(questionText) {
+  currentThoughtQuestion = questionText;
+
+  const questionHeading =
+    document.getElementById("activeThoughtQuestion");
+
+  const thoughtsBox =
+    document.getElementById("confessionCorner");
+
+  if (questionHeading) {
+    questionHeading.textContent = questionText;
+  }
+
+  if (thoughtsBox) {
+    thoughtsBox.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+
+const giveThoughtBtn =
+  document.getElementById("giveThoughtBtn");
+
+if (giveThoughtBtn) {
+  giveThoughtBtn.addEventListener("click", () => {
+    const questionDisplay =
+      document.getElementById("questionDisplay");
+
+    if (questionDisplay) {
+      selectThoughtQuestion(
+        questionDisplay.textContent.trim()
+      );
+    }
+  });
+}
